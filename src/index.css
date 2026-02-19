@@ -1,0 +1,407 @@
+/* AGATHO Font Family */
+@font-face {
+  font-family: 'Agatho';
+  src: url('./fonts/agatho-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Agatho';
+  src: url('./fonts/agatho-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Agatho';
+  src: url('./fonts/agatho-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Agatho';
+  src: url('./fonts/agatho-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Agatho Caps';
+  src: url('./fonts/agatho-light-caps.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Agatho Caps';
+  src: url('./fonts/agatho-regular-caps.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Agatho Caps';
+  src: url('./fonts/agatho-bold-caps.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Agatho Narrow';
+  src: url('./fonts/agatho-narrow.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --lh-primary: #FFF4E2;
+  --lh-secondary: #FDE4BC;
+  --lh-accent: #472825;
+  --lh-accent-hover: #96786F;
+  --lh-text: #472825;
+  --lh-text-secondary: #96786F;
+  --lh-text-muted: #D3AB80;
+  --lh-border: #D3AB80;
+  --lh-border-hover: #96786F;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--lh-primary);
+  color: var(--lh-text);
+  font-family: 'Agatho', serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  letter-spacing: 0.02em;
+  line-height: 1.7;
+}
+
+::selection {
+  background-color: rgba(71, 40, 37, 0.15);
+  color: #472825;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--lh-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--lh-border);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--lh-accent);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Agatho', serif;
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+.font-accent {
+  font-family: 'Agatho Narrow', serif;
+  font-style: normal;
+}
+
+.font-caps {
+  font-family: 'Agatho Caps', serif;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@layer base {
+  :root {
+    --background: 40 100% 94.5%;
+    --foreground: 6 16% 17%;
+    --card: 36 95% 86%;
+    --card-foreground: 6 16% 17%;
+    --popover: 40 100% 94.5%;
+    --popover-foreground: 6 16% 17%;
+    --primary: 6 16% 21%;
+    --primary-foreground: 40 100% 94.5%;
+    --secondary: 36 95% 86%;
+    --secondary-foreground: 6 16% 17%;
+    --muted: 36 95% 86%;
+    --muted-foreground: 12 11% 51%;
+    --accent: 36 95% 86%;
+    --accent-foreground: 6 16% 17%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 40 100% 94.5%;
+    --border: 30 36% 66%;
+    --input: 30 36% 66%;
+    --ring: 6 16% 21%;
+    --radius: 0rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer base {
+  [data-debug-wrapper="true"] {
+    display: contents !important;
+  }
+  [data-debug-wrapper="true"] > * {
+    margin-left: inherit;
+    margin-right: inherit;
+    margin-top: inherit;
+    margin-bottom: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+    padding-top: inherit;
+    padding-bottom: inherit;
+    column-gap: inherit;
+    row-gap: inherit;
+    gap: inherit;
+  }
+}
+
+/* 3D Scroll Effects */
+.perspective-container {
+  perspective: 1200px;
+  perspective-origin: center center;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* 3D Card Flip */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-3d:hover {
+  transform: rotateY(5deg) rotateX(5deg) translateZ(20px);
+}
+
+/* Parallax depth layers */
+.parallax-deep {
+  transform: translateZ(-200px) scale(1.4);
+}
+
+.parallax-mid {
+  transform: translateZ(-100px) scale(1.2);
+}
+
+.parallax-near {
+  transform: translateZ(0px) scale(1);
+}
+
+.parallax-front {
+  transform: translateZ(50px) scale(0.95);
+}
+
+/* 3D Tilt on scroll */
+@keyframes tiltIn {
+  from {
+    opacity: 0;
+    transform: perspective(1200px) rotateX(30deg) translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1200px) rotateX(0deg) translateY(0);
+  }
+}
+
+@keyframes slideFromLeft3D {
+  from {
+    opacity: 0;
+    transform: perspective(1200px) rotateY(-15deg) translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1200px) rotateY(0deg) translateX(0);
+  }
+}
+
+@keyframes slideFromRight3D {
+  from {
+    opacity: 0;
+    transform: perspective(1200px) rotateY(15deg) translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1200px) rotateY(0deg) translateX(0);
+  }
+}
+
+@keyframes floatUp3D {
+  from {
+    opacity: 0;
+    transform: perspective(1200px) rotateX(20deg) translateY(80px) translateZ(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1200px) rotateX(0deg) translateY(0) translateZ(0);
+  }
+}
+
+@keyframes revealScale3D {
+  from {
+    opacity: 0;
+    transform: perspective(1200px) scale(0.8) rotateX(10deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1200px) scale(1) rotateX(0deg);
+  }
+}
+
+/* Smooth scroll reveal classes */
+.scroll-reveal-3d {
+  animation: tiltIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.scroll-reveal-left {
+  animation: slideFromLeft3D 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.scroll-reveal-right {
+  animation: slideFromRight3D 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.scroll-reveal-float {
+  animation: floatUp3D 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.scroll-reveal-scale {
+  animation: revealScale3D 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hover 3D effects */
+.hover-3d-tilt {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-3d-tilt:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateZ(10px);
+}
+
+/* Image zoom on scroll */
+.image-zoom {
+  transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-zoom:hover {
+  transform: scale(1.05);
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateZ(0);
+  }
+  50% {
+    transform: translateY(-20px) translateZ(20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Gradient text animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text-animated {
+  background: linear-gradient(90deg, #472825, #D3AB80, #96786F, #472825);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* Smooth section transitions */
+.section-3d {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Depth shadow effect */
+.depth-shadow {
+  box-shadow: 
+    0 10px 30px rgba(71, 40, 37, 0.1),
+    0 30px 60px rgba(71, 40, 37, 0.05),
+    0 50px 100px rgba(71, 40, 37, 0.03);
+}
+
+/* Glass morphism for overlays */
+.glass-overlay {
+  background: rgba(255, 244, 226, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Staggered animation delay utilities */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
