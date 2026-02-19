@@ -1,0 +1,70 @@
+/* LHEATHER - Luxury Leather Atelier — Warm Palette */
+
+.grain-overlay::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.product-card-hover {
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.product-card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 32px 64px -16px rgba(71, 40, 37, 0.12), 0 0 0 1px rgba(211, 171, 128, 0.3);
+}
+
+.image-zoom {
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.image-zoom:hover {
+  transform: scale(1.05);
+}
+
+.cursor-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.03;
+  background: radial-gradient(circle, rgba(211, 171, 128, 0.6), transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+
+.nav-blur {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #D3AB80, transparent);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
